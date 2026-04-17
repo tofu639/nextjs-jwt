@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useAuth } from "../lib/auth-context";
 
 interface TokenPayload {
@@ -81,6 +82,12 @@ export default function DashboardPage() {
             Dashboard
           </h1>
           <div className="flex items-center gap-4">
+            <Link
+              href="/dashboard/users"
+              className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+            >
+              Users
+            </Link>
             <span className="text-sm text-zinc-600 dark:text-zinc-400">
               Welcome, <strong>{user.username}</strong>
             </span>
